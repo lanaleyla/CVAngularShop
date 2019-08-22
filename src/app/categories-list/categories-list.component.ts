@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import categories from 'src/assets/categories.json';
-import products from 'src/assets/products.json';
 import { Category, Product } from 'src/model/index';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-categories-list',
@@ -11,56 +10,38 @@ import { Category, Product } from 'src/model/index';
 
 export class CategoriesListComponent implements OnInit {
 
-  @Input() pressedProduct: Product; //the product the user pressed on
-  categoryId: string = '';          //category id of the category the user chose
-  categoriesArray: Category[] = []; //holds categories each category has id and title
-  productsArray: Product[] = [];    //holds the original products array
-  showProducts: Product[] = [];     //holds the changing by demand products array
+  @Input() pressedProduct: Product;  //the product the user pressed on
+  categoryId: string = 'A';          //category id of the category the user chose
+  productList = 'productList';       //for the details to recognize how to show the product view
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.categoriesArray = categories.categories;
-    this.productsArray = products.products;
-    this.initializeProductsAll(this.productsArray); //initialize showProducts array with all the products
   }
 
-  //when category is chosen load its products
-  alartProducts(e) {
-    this.categoryId = e.name; //update current chosen category
-    this.loadProducts(e.name);//load products
+  /**get categories list */
+  get categoriesArray(): Category[] {
+    return this.dataService.getCategories();
   }
 
-  //load products to show products array by a given category id
-  loadProducts(categoryId) {
-    this.cleanChangingArray(this.showProducts);
-
-    if (categoryId === 'A') { //special case if user choose to see all products
-      for (let product of this.productsArray) {
-        this.showProducts.push(product);
-      }
-    }
-    else { //show products by a given category
-      this.showProducts = this.productsArray.filter(product => product.categoryId === categoryId);
-    }
-    this.categoryId = ''; //initialize category name for the next time
+  /**get products list */
+  get productsArray(): Product[] {
+    return this.dataService.getProductListOnDemand(this.categoryId);
   }
 
-
-  initializeProductsAll(products: Product[]) {  //initialize products view to all products
-    for (let product of products) {
-      this.showProducts.push(product);
-    }
+  /**update when category is chosen*/
+  showProducts(e) {
+    this.categoryId = e.name; 
   }
 
-  updateProductView(e: Product) {//update product details view
+  /**update product-details view(show/hide)*/
+  updateProductView(e: Product) {
     this.pressedProduct = e;
   }
 
-  cleanChangingArray(array) { //clean the changing array
-    while (array.length > 0) { //initialize the showProducts array on every choose
-      array.pop();
-    }
+  /**when pressing back initialize the product to null*/
+  backToProductView() {
+    this.pressedProduct = null;
   }
 
 }

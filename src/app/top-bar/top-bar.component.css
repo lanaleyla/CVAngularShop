@@ -13,9 +13,26 @@
     border-radius: 10px;
 }
 
+.menuIcon:hover {
+    box-shadow: 0 12px 16px 0 #0000003d, 0 17px 50px 0 #00000030;
+}
+
 .icons {
     right: 0px;
     display: flex;
     flex-flow: row-reverse;
     flex-wrap: wrap;
+}
+
+.cart {
+    display: flex;
+    flex-flow: row;
+    color: #fff;
+    padding-right: 10px;
+    border-right: 1px solid #fff;
+}
+
+.cartAndIcons {
+    display: flex;
+    flex-flow: row-reverse;
 }

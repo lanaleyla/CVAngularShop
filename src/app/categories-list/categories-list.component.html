@@ -1,18 +1,24 @@
 <div class="categoriesAndProducts" *ngIf='!pressedProduct'>
+
   <div class='categories'>
     <ul class='categoriesList'>
       <li class='category' *ngFor='let category of categoriesArray'>
         <input [name]='category.id' [value]='category.title' type='button' class='categoryBtn'
-          (click)='alartProducts($event.target)'>
+          (click)='showProducts($event.target)'>
       </li>
     </ul>
   </div>
+
   <div>
-    <app-product-list (productPressedEvent)='updateProductView($event)' [products]='showProducts'>good it works
+    <app-product-list (productPressedEvent)='updateProductView($event)' [products]='productsArray'>
     </app-product-list>
   </div>
 
 </div>
 
-<app-product-details (clickOnBackEvent)='updateProductView($event)' *ngIf='pressedProduct' [product]='pressedProduct'>
-</app-product-details>
+<div *ngIf='pressedProduct'>
+  <app-product-details [productIn]='productList' (clickOnBackEvent)='updateProductView($event)'
+    [product]='pressedProduct'>
+  </app-product-details>
+  <button class='backBtn' type='button' (click)='backToProductView()'>BACK</button>
+</div>

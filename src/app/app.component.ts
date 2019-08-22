@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { CartService } from './cart.service';
 
 @Component({
   selector: 'app-root',
@@ -32,27 +33,40 @@ export class AppComponent {
   title = 'shop';
   message = 'home';        //the option the user chose from the sidebar menu
   menuClicked = false;     //if user clicked on menu icon in the top bar
-  optionClicked = false;   //option within the menu was clicked
+  optionClicked = false;   //option within the menu was clicked(home,about,products,contact) for animation
 
-  updateMenu(e) { //update visability of side bar menu
+  constructor(private cartService: CartService) {
+  }
+
+  /**update visability of side bar menu */
+  updateMenu(e) { 
     this.menuClicked = e;
-    if (this.menuClicked) {
+    if (this.menuClicked) {//if the menu was clicked ,option was not chosen yet
       this.optionClicked = false;
     }
   }
 
-  updateMessage(e) {//update the option the user has chosen
+  /**update the option the user has chosen (home,about,products,contact) */
+  updateMessage(e) {
     if (e !== this.message) {
       this.message = e;
       this.optionClicked = true;
     }
+    this.cartService._showCartStatus = false; //hide cart if your are on cart view
   }
 
-  get status(): string { //status if side bar has opened
+  /**get show cart status(hide/show) */
+  get showCart() {
+    return this.cartService._showCartStatus;
+  }
+
+  /**status if side bar has opened for animation */
+  get status(): string { 
     return this.menuClicked ? 'active' : 'inactive';
   }
 
-  get OptionStatus() { //status if user clicked on option from side bar
+  /**status if user clicked on option from side bar for animation */
+  get OptionStatus() { 
     return this.optionClicked ? 'true' : 'false';
   }
 }

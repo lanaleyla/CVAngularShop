@@ -2,18 +2,27 @@
     <app-side-bar (clickHideOnEvent)='updateMenu($event)' (clickCloseMenuEvent)='updateMenu($event)'
         (clickedEvent)='updateMessage($event)'></app-side-bar>
 </div>
+
 <div [@open]='status'>
-<app-header (clickOnMenuEvent)=updateMenu($event)></app-header>
+    <app-header (clickOnMenuEvent)=updateMenu($event)></app-header>
 
-<div [@myState]='OptionStatus' class='textDesign' *ngIf="message=='home'">Welcome, please take your time and choose from our varaity of
-    georgian foods!</div>
+    <div class='view'>
+        <div [@myState]='OptionStatus' class='textDesign' *ngIf="message=='home' && !showCart">Welcome, please take your
+            time and choose from our varaity of
+            georgian foods!</div>
 
-<div [@myState]='OptionStatus' class='textDesign' *ngIf="message=='about'">About us, We offer georgian food shopping services</div>
+        <div [@myState]='OptionStatus' class='textDesign' *ngIf="message=='about' && !showCart">About us, We offer
+            georgian food shopping services</div>
 
-<div [@myState]='OptionStatus' class="productsView"  *ngIf="message=='products'">
-    <app-categories-list></app-categories-list>
-</div>
+        <div [@myState]='OptionStatus' *ngIf="message=='products' && !showCart">
+            <app-categories-list></app-categories-list>
+        </div>
 
-<div [@myState]='OptionStatus' class='textDesign' *ngIf="message=='contact'">Please contact us via Email: lanali999@gmail.com,Thank you!</div>
+        <div [@myState]='OptionStatus' class='textDesign' *ngIf="message=='contact'&& !showCart">Please contact us via
+            Email: lanali999@gmail.com,Thank you!</div>
+
+        <app-cart *ngIf='showCart'></app-cart>
+
+    </div>
 
 </div>

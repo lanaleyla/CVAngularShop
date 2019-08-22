@@ -12,6 +12,7 @@ import { CategoriesListComponent } from './categories-list/categories-list.compo
 import { SocialLinksComponent } from './social-links/social-links.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CategoriesListComponent,
     SocialLinksComponent,
     ProductDetailsComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

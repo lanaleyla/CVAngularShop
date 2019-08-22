@@ -1,5 +1,6 @@
 <div class='product' *ngIf='showData'>
-    <img class='productImg' [src]='product.image' alt='produtc' (click)='showDetails()' />
+    <img class='productImg' [src]='product.image' alt='product' (click)='showDetails()' />
     {{ product.title }}
+    <button class='btn' type='button' (click)='addToCart()'>ADD TO CART</button>
 </div>
 

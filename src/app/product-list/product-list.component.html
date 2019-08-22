@@ -1,7 +1,7 @@
 <div class='productsList'>
     <ul class='productsList'>
         <li class='productWrap' *ngFor='let product of products'>
-            <app-product (clickOnProductEvent)='passProductPressed($event)' [product]='product' [showData]='showD'>
+            <app-product (clickOnProductEvent)='passProductPressed($event)' [product]='product' [showData]='showDetails'>
             </app-product>
         </li>
     </ul>

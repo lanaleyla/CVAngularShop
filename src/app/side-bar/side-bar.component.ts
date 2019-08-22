@@ -14,27 +14,33 @@ export class SideBarComponent{
   @Output() clickHideOnEvent=new EventEmitter();    //option was choosen ,hide the side bar
   
 
+  /**send chosen category */
   showMain(){
-    this.clickedEvent.emit('home'); //send chosen category 
+    this.clickedEvent.emit('home'); 
     this.clickHideOnEvent.emit(false);//hide side bar
   }
 
+  /**send chosen category  */
   showAbout(){
-    this.clickedEvent.emit('about');//send chosen category 
+    this.clickedEvent.emit('about');
     this.clickHideOnEvent.emit(false);//hide side bar
   }
 
+  /**send chosen category */
   showProducts(){
-    this.clickedEvent.emit('products');//send chosen category 
+    this.clickedEvent.emit('products');
     this.clickHideOnEvent.emit(false);//hide side bar
   }
 
+  /**send chosen category  */
   showContact(){
-    this.clickedEvent.emit('contact');//send chosen category 
+    this.clickedEvent.emit('contact');
     this.clickHideOnEvent.emit(false);//hide side bar
   }
 
-  closeTopBar() {//hide side bar on x click
+  /**hide side bar on x click */
+  closeTopBar() {
     this.clickCloseMenuEvent.emit(false);
   }
+  
 }

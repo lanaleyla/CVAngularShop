@@ -11,7 +11,8 @@ export class HeaderComponent {
 
   constructor() { }
 
-  updateMenu(e) { //update the visabilaty of the side bar menu
+  /**update the visabilaty of the side bar menu */
+  updateMenu(e) { 
     this.clickOnMenuEvent.emit(e);
   }
 

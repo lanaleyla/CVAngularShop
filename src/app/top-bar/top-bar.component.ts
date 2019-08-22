@@ -1,20 +1,29 @@
-import { Component ,EventEmitter, Output} from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-top-bar',
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.css']
 })
-export class TopBarComponent{
+export class TopBarComponent {
 
-  @Output() clickOnMenuEvent=new EventEmitter();//on menu icon click
+  constructor(private cartService: CartService) { }
 
-  constructor() { }
-  
-  openSidebar() { //send true to open side bar on menu click
-    console.log('here in open side bar');
+  @Output() clickOnMenuEvent = new EventEmitter();//on menu icon click
+
+  /**send true to open side bar on menu click */
+  openSidebar() { 
     this.clickOnMenuEvent.emit(true);
   }
-  
 
+  /**get the nimber of items in cart */
+  get numberOfItemsInCart(): number { 
+    return this.cartService.getItemsCount();
+  }
+
+  /**show cart view */
+  openCart() { 
+    this.cartService._showCartStatus=true;
+  }
 }
