@@ -1,10 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Product, Duplicate } from 'src/model';
+import { Product, DuplicatedProduct } from 'src/model';
 
-export class duplicateProduct {
-  constructor(public title: string, public count: number) {
-  }
-}
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +8,7 @@ export class duplicateProduct {
 export class CartService {
 
   productsInCart: Product[] = [];
-  duplicates: Duplicate[] = [];
+  duplicates: DuplicatedProduct[] = [];
   _showCartStatus: boolean;
   totalSum: number = 0;
   numberOfproductsInCart: number = 0;
@@ -45,7 +41,7 @@ export class CartService {
     let index = this.checkDuplicates(product);
     if (index < 0) { //no duplicates
       this.productsInCart.push(product);
-      this.duplicates.push(new duplicateProduct(product.title, 1));
+      this.duplicates.push(new DuplicatedProduct(product.title, 1));
     }
     else { //yes there are duplicates
       this.duplicates[index].count += 1;

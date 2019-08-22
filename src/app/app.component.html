@@ -7,20 +7,12 @@
     <app-header (clickOnMenuEvent)=updateMenu($event)></app-header>
 
     <div class='view'>
-        <div [@myState]='OptionStatus' class='textDesign' *ngIf="message=='home' && !showCart">Welcome, please take your
-            time and choose from our varaity of
-            georgian foods!</div>
-
-        <div [@myState]='OptionStatus' class='textDesign' *ngIf="message=='about' && !showCart">About us, We offer
-            georgian food shopping services</div>
-
+        <div [@myState]='OptionStatus' class='textDesign' *ngIf="message=='home' && !showCart">{{home}}</div>
+        <div [@myState]='OptionStatus' class='textDesign' *ngIf="message=='about' && !showCart">{{about}}</div>
         <div [@myState]='OptionStatus' *ngIf="message=='products' && !showCart">
             <app-categories-list></app-categories-list>
         </div>
-
-        <div [@myState]='OptionStatus' class='textDesign' *ngIf="message=='contact'&& !showCart">Please contact us via
-            Email: lanali999@gmail.com,Thank you!</div>
-
+        <div [@myState]='OptionStatus' class='textDesign' *ngIf="message=='contact'&& !showCart">{{contact}}</div>
         <app-cart *ngIf='showCart'></app-cart>
 
     </div>

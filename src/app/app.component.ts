@@ -34,6 +34,9 @@ export class AppComponent {
   message = 'home';        //the option the user chose from the sidebar menu
   menuClicked = false;     //if user clicked on menu icon in the top bar
   optionClicked = false;   //option within the menu was clicked(home,about,products,contact) for animation
+  home:string='Welcome, please take your time and choose from our varaity of georgian foods!';
+  contact:string='Please contact us via Email: lanali999@gmail.com,Thank you!';
+  about:string='About us, We offer georgian food shopping services';
 
   constructor(private cartService: CartService) {
   }
