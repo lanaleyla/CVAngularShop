@@ -21,7 +21,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { AddEditProductFormComponent } from './add-edit-product-form/add-edit-product-form.component';
 import { LanguagePipe } from './language.pipe';
-import { ConfirmationDirective } from './confirmation.directive';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +42,6 @@ import { ConfirmationDirective } from './confirmation.directive';
     ContactComponent,
     AddEditProductFormComponent,
     LanguagePipe,
-    ConfirmationDirective,
   ],
   imports: [
     BrowserModule,

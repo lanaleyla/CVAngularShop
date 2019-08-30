@@ -29,7 +29,7 @@
 
         <div class='buttons'>
             <input class='btn' type='button' value='BACK' (click)='back($event)'>
-            <input appConfirmation [disabled]='!contactForm.form.valid' class='btn' type='submit' value='SUBMIT'>
+            <input [disabled]='!contactForm.form.valid' class='btn' type='submit' value='SUBMIT'>
         </div>
 
     </form>
