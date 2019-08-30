@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { LocalizationService,PermissionService, PageService } from '../services/index';
+import { PermissionService, PageService } from '../services/index';
 
 @Component({
   selector: 'app-side-bar',
@@ -8,20 +8,13 @@ import { LocalizationService,PermissionService, PageService } from '../services/
 })
 export class SideBarComponent {
 
-  languages:string[];
-  constructor(private pageService: PageService, private permissionService: PermissionService, private localizationService: LocalizationService) { }
+  constructor(private pageService: PageService, private permissionService: PermissionService) { }
 
   @Output() clickedEvent = new EventEmitter();        //click on option from the menu  /******************look if needed */
   @Output() clickCloseMenuEvent = new EventEmitter(); //x-close was clicked
   @Output() clickHideOnEvent = new EventEmitter();    //option was choosen ,hide the side bar
 
   ngOnInit() {
-    this.languages=this.localizationService.languages;
-  }
-
-  /**change the language of the menu links */
-  changeLanguage(e) {
-    this.localizationService.changeLanguage(e.target.value);
   }
 
   /**send chosen category */

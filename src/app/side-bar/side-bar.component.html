@@ -2,19 +2,13 @@
 
     <div class='menuOptions'>
 
-        <div class='chooseLanguages'>
-            <div *ngFor='let l of languages'>
-                <input class='languageBtn' type='button' name='ENG' (click)='changeLanguage($event)' [value]=l>
-            </div>
-        </div>
-
         <a href='#' class='closeBtn' (click)='closeTopBar()'>×</a>
-        <button (click)='showMain()' class='sideBtn' type='button'>{{"Home" | language}}</button>
-        <button (click)='showAbout()' class='sideBtn' type='button'>{{"About" | language}}</button>
-        <button (click)='showProducts()' class='sideBtn' type='button'>{{"Products" | language}}</button>
+        <button (click)='showMain()' class='sideBtn' type='button'>Home</button>
+        <button (click)='showAbout()' class='sideBtn' type='button'>About</button>
+        <button (click)='showProducts()' class='sideBtn' type='button'>Products</button>
         <button *ngIf="permission" (click)='showAddForm()' class='sideBtn'
-            type='button'>{{"Add Product" | language}}</button>
-        <button (click)='showContact()' class='sideBtn' type='button'>{{"Contact" | language}}</button>
+            type='button'>Add Product</button>
+        <button (click)='showContact()' class='sideBtn' type='button'>Contact</button>
 
     </div>
 

@@ -20,7 +20,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { AddEditProductFormComponent } from './add-edit-product-form/add-edit-product-form.component';
-import { LanguagePipe } from './language.pipe';
+
 
 
 @NgModule({
@@ -41,7 +41,6 @@ import { LanguagePipe } from './language.pipe';
     AboutComponent,
     ContactComponent,
     AddEditProductFormComponent,
-    LanguagePipe,
   ],
   imports: [
     BrowserModule,
