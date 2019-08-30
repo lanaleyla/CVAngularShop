@@ -1,10 +1,15 @@
 .textDesign {
     font-size: 30px;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 10px;
     color: #211d57;
 }
 
 .view {
-    padding: 20px;
+    /* margin: 20px; */
+    padding: 10px;
+   
+}
+.viewpProducts {
+    margin: 0px;
 }

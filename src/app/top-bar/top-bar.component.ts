@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { CartService } from '../cart.service';
+import {CartService,UserService,PageService} from 'src/app/services';
 
 @Component({
   selector: 'app-top-bar',
@@ -8,22 +8,34 @@ import { CartService } from '../cart.service';
 })
 export class TopBarComponent {
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService, private userService: UserService, private pageService: PageService) { }
 
   @Output() clickOnMenuEvent = new EventEmitter();//on menu icon click
 
   /**send true to open side bar on menu click */
-  openSidebar() { 
+  openSidebar() {
     this.clickOnMenuEvent.emit(true);
   }
 
   /**get the nimber of items in cart */
-  get numberOfItemsInCart(): number { 
+  get numberOfItemsInCart(): number {
     return this.cartService.getItemsCount();
   }
 
   /**show cart view */
-  openCart() { 
-    this.cartService._showCartStatus=true;
+  openCart() {
+    this.pageService.currentPage = 'cart';
+    this.cartService._showCartStatus = true;
   }
+
+  /**show login form */
+  openLoginForm() {
+    this.pageService.currentPage = 'login';
+  }
+
+  /**get the status of the user (logged in or not) */
+  get loginStatus(): boolean {
+    return this.userService.userStatus;
+  }
+
 }

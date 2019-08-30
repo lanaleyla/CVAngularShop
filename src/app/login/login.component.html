@@ -1,0 +1,8 @@
+<input *ngIf="loginStatusText=='SIGN IN'" class='login' (click)='openLoginForm()' type='button'
+    value='{{loginStatusText|uppercase}}'>
+<div *ngIf="loginStatusText!='SIGN IN'" class='loginMenu'>
+    <input class='login' type='button' value='{{loginStatusText|uppercase}}'>
+    <div class='dropdown-content'>
+        <a href="#" (click)='sightOut()'>SIGHT OUT</a>
+    </div>
+</div>

@@ -13,6 +13,12 @@
     border-radius: 10px;
 }
 
+.cartIcon {
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+}
+
 .menuIcon:hover {
     box-shadow: 0 12px 16px 0 #0000003d, 0 17px 50px 0 #00000030;
 }
@@ -35,4 +41,23 @@
 .cartAndIcons {
     display: flex;
     flex-flow: row-reverse;
+}
+
+.login {
+    align-self: center;
+}
+
+.btn {
+    display: inline-flex;
+    margin: 5px 5px 5px 0px;
+    outline: none;
+    width: auto;
+    height: 50px;
+    border: none;
+    background-color: #211d57;
+    color: #fff;
+}
+
+.btn:hover {
+    box-shadow: 0 12px 16px 0 #0000003d, 0 17px 50px 0 #00000030;
 }

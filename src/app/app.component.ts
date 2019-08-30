@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
-import { CartService } from './cart.service';
+import { CartService } from 'src/app/services/cart.service';
+import { PageService } from 'src/app/services/page.service';
 
 @Component({
   selector: 'app-root',
@@ -31,18 +32,15 @@ import { CartService } from './cart.service';
 export class AppComponent {
 
   title = 'shop';
-  message = 'home';        //the option the user chose from the sidebar menu
   menuClicked = false;     //if user clicked on menu icon in the top bar
   optionClicked = false;   //option within the menu was clicked(home,about,products,contact) for animation
-  home:string='Welcome, please take your time and choose from our varaity of georgian foods!';
-  contact:string='Please contact us via Email: lanali999@gmail.com,Thank you!';
-  about:string='About us, We offer georgian food shopping services';
 
-  constructor(private cartService: CartService) {
+  constructor(private cartService: CartService, private pageService: PageService) {
+    this.initializeCurrentPage();
   }
 
   /**update visability of side bar menu */
-  updateMenu(e) { 
+  updateMenu(e) {
     this.menuClicked = e;
     if (this.menuClicked) {//if the menu was clicked ,option was not chosen yet
       this.optionClicked = false;
@@ -51,11 +49,13 @@ export class AppComponent {
 
   /**update the option the user has chosen (home,about,products,contact) */
   updateMessage(e) {
-    if (e !== this.message) {
-      this.message = e;
-      this.optionClicked = true;
-    }
+    this.optionClicked = true; //fixxxxxxxxx
     this.cartService._showCartStatus = false; //hide cart if your are on cart view
+  }
+
+  /**get the current page */
+  get currentPage(): string {
+    return this.pageService.currentPage;
   }
 
   /**get show cart status(hide/show) */
@@ -64,12 +64,17 @@ export class AppComponent {
   }
 
   /**status if side bar has opened for animation */
-  get status(): string { 
+  get status(): string {
     return this.menuClicked ? 'active' : 'inactive';
   }
 
   /**status if user clicked on option from side bar for animation */
-  get OptionStatus() { 
+  get OptionStatus() {
     return this.optionClicked ? 'true' : 'false';
+  }
+  
+  /**initialize the current page to be home */
+  initializeCurrentPage(){
+    this.pageService.currentPage='home';
   }
 }

@@ -2,7 +2,7 @@
     <div class='title'>YOUR CART</div>
     <div class='productsView'>
 
-        <div *ngIf='productsList.length==0' class="title">CART IS EMPTY, WHY? :(</div>
+        <div *ngIf='productsList.length==0' class='title'>CART IS EMPTY, WHY? :(</div>
         <ul class='productsList'>
             <li *ngFor='let product of productsList'>
                 <app-product-details [productIn]='cart' (clickOnBackEvent)='updateProductView($event)' *ngIf='product'

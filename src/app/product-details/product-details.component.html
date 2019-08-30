@@ -4,13 +4,16 @@
         <p>'{{product.title}}'</p>
         <p>{{product.description}}</p>
         <p>{{product.price}} ILS</p>
-        <button *ngIf="productIn=='productList'" type='button' class='btn'
-            (click)='addProductToCart(product)'>ADD</button>
+        <button *ngIf="productIn=='productList' && userStatus" type='button' class='btn'
+            (click)='addProductToCart(product)'>ADD PRODUCT</button>
+        <button *ngIf="productIn=='productList' && userStatus && permission" type='button' class='btn'
+            (click)='editProduct()'>EDIT PRODUCT</button>
 
         <div *ngIf="productIn=='ProductInCart'">
             <div>Qty: {{productCount}}</div>
+            <button type='button' class='btn' (click)='addProductToCart(product)'>ADD QTY</button>
             <button type='button' class='btn' (click)='deleteProductFromCart(product)'>REMOVE</button>
         </div>
-        
+
     </div>
 </div>

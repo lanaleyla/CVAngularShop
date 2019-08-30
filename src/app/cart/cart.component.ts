@@ -1,6 +1,6 @@
 import { Component, OnInit, } from '@angular/core';
 import { Product } from 'src/model';
-import { CartService } from '../cart.service';
+import {CartService,PageService} from 'src/app/services';
 
 @Component({
   selector: 'app-cart',
@@ -11,7 +11,7 @@ export class CartComponent implements OnInit {
 
   cart = 'ProductInCart'; //used in the productDetails component(show remove button and quantity)
 
-  constructor(private cartService: CartService) { }
+  constructor(private cartService: CartService,private pageService:PageService) { }
 
   ngOnInit() {
   }
@@ -23,7 +23,7 @@ export class CartComponent implements OnInit {
 
   /**close cart view*/
   closeCartView() {
-    this.cartService._showCartStatus = false;
+    this.pageService.currentPage=this.pageService.previousPage;//fix this
   }
 
   /**get the total sum of the products in cart*/

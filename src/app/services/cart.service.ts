@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Product, DuplicatedProduct } from 'src/model';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -47,7 +46,7 @@ export class CartService {
       this.duplicates[index].count += 1;
     }
     this.numberOfproductsInCart += 1; //update amount of items
-    this.totalSum = this.totalSum + product.price; //update sum of items
+    this.calculateSum();
   }
 
   /**delet product from cart, if there is more then one instance of the product update its count else delete */
@@ -65,7 +64,15 @@ export class CartService {
       this.duplicates[indexP].count -= 1;
     }
     this.numberOfproductsInCart -= 1; //update amount of items
-    this.totalSum = this.totalSum - product.price; //update sum of items
+    this.calculateSum();
+  }
+
+  /**delete all products from cart when users sights out */
+  deleteAllProducts() {
+    this.duplicates = [];
+    this.productsInCart = [];
+    this.numberOfproductsInCart = 0;
+    this.totalSum = 0;
   }
 
   /**check if user added the same product more then one time */
@@ -77,9 +84,23 @@ export class CartService {
   }
 
   /**get product count if he was added to cart more then once*/
-  getProductCount(product:Product)
-  {
-    if( this.checkDuplicates(product)>=0)
-    return this.duplicates[this.checkDuplicates(product)].count;
+  getProductCount(product: Product) {
+    if (this.checkDuplicates(product) >= 0)
+      return this.duplicates[this.checkDuplicates(product)].count;
+  }
+
+  /**set product count if he was added to cart more then once in the cart with the input element*/
+  setProductCount(product: Product, count: number) {
+    if (this.checkDuplicates(product) >= 0)
+      this.duplicates[this.checkDuplicates(product)].count = count;
+  }
+
+  /**calculate the total sum */
+  calculateSum() {
+    let sum = 0;
+    for (let product of this.productsInCart) {
+      sum =sum +(this.getProductCount(product)*product.price);
+    }
+    this.totalSum=sum;
   }
 }

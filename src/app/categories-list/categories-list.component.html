@@ -16,7 +16,7 @@
 
 </div>
 
-<div *ngIf='pressedProduct'>
+<div *ngIf='pressedProduct' class='productDetails'>
   <app-product-details [productIn]='productList' (clickOnBackEvent)='updateProductView($event)'
     [product]='pressedProduct'>
   </app-product-details>

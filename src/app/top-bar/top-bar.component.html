@@ -10,7 +10,7 @@
                     alt='facebookIcon' /></a>
             <a #ref href='https://mail.google.com'>
                 <img class='menuIcon' src='https://icon-library.net/images/icon-mail/icon-mail-22.jpg'
-                    alt='emailIcon'/>
+                    alt='emailIcon' />
             </a>
 
             <a #ref href='https://twitter.com/home?lang=he'>
@@ -20,10 +20,14 @@
         </app-social-links>
 
         <div class='cart'>
-            <img class='menuIcon' (click)='openCart()'
-                src='https://cdn3.iconfinder.com/data/icons/retail-supplies-blue/64/635_shopping-basket-cart-shop-512.png'
-                alt='cart'>
-            <div>({{numberOfItemsInCart}})</div>
+            <app-login class='login'></app-login>
+            <button class='btn' [disabled]='!loginStatus' (click)='openCart()'>
+                <img class='cartIcon'
+                    src='https://cdn3.iconfinder.com/data/icons/retail-supplies-blue/64/635_shopping-basket-cart-shop-512.png'
+                    alt='cart'>
+                ({{numberOfItemsInCart}})
+            </button>
+            <div></div>
         </div>
 
     </div>

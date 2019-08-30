@@ -13,6 +13,15 @@ import { SocialLinksComponent } from './social-links/social-links.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CartComponent } from './cart/cart.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { AddEditProductFormComponent } from './add-edit-product-form/add-edit-product-form.component';
+import { LanguagePipe } from './language.pipe';
+import { ConfirmationDirective } from './confirmation.directive';
 
 @NgModule({
   declarations: [
@@ -26,11 +35,21 @@ import { CartComponent } from './cart/cart.component';
     SocialLinksComponent,
     ProductDetailsComponent,
     CartComponent,
+    LoginFormComponent,
+    LoginComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent,
+    AddEditProductFormComponent,
+    LanguagePipe,
+    ConfirmationDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

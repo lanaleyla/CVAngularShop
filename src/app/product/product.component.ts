@@ -1,7 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Product } from 'src/model/index';
-import { CartService } from '../cart.service';
-
+import {CartService,UserService,PageService,PermissionService} from 'src/app/services/index';
 
 @Component({
   selector: 'app-product',
@@ -10,8 +9,8 @@ import { CartService } from '../cart.service';
 })
 export class ProductComponent implements OnInit {
 
-  constructor(private cartService: CartService) { }
-  
+  constructor(private cartService: CartService, private userService: UserService, private pageService: PageService,private permissionService:PermissionService) { }
+
   ngOnInit() { };
 
   @Input() product: Product;  //chosen product on press
@@ -27,4 +26,21 @@ export class ProductComponent implements OnInit {
   addToCart() {
     this.cartService.addProduct(this.product);
   }
+
+  /**get user status(logged in or not) */
+  get userStatus(): boolean {
+    return this.userService.userStatus;
+  }
+
+  /**send product to edit and redirect to add edit page */
+  editProduct() {
+    this.pageService.currentPage = 'addProduct';
+    this.userService.setProductToEdit(this.product); //send the product to edit
+  }
+
+  /**get users premission */
+  get permission(): boolean {
+    return this.permissionService.getUserPremission();
+  }
+
 }
