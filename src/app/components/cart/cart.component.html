@@ -1,0 +1,22 @@
+<div class='cart'>
+    <div class='title'>YOUR CART</div>
+    <div class='productsView'>
+
+        <div>
+            <div *ngIf='productsList.length===0' class='title'>CART IS EMPTY, WHY? :(</div>
+            <ul class='productsList'>
+                <li *ngFor='let product of productsList' class='productDesign'>
+                    <app-cart-item [product]='product'></app-cart-item>
+                </li>
+            </ul>
+            <router-outlet></router-outlet>
+        </div>
+
+        <div class='totalSum' *ngIf='productsList.length!==0'>
+            <div class='titleInTotal'>TOTAL</div>
+            <div>NUMBER OF ITEMS: {{numberOfproductsInCart}}</div>
+            <div>TOTAL SUM IS: {{totalSumOfProducts}} ILS</div>
+        </div>
+        
+    </div>
+</div>

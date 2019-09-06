@@ -64,7 +64,6 @@ export class UserService {
     this.product = product;
   }
 
-
 }
 
 

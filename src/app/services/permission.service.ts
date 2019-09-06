@@ -13,7 +13,7 @@ export class PermissionService {
   /**get user by its name, check premission*/
   getUserPremission(): boolean {
     if (this.userService.user) {
-      let u: User = this.userService.getAllUsers().find((element) => {
+      const u: User = this.userService.getAllUsers().find((element) => {
         return element.name === this.userService.user.name;
       });
       if (u && u.permission === 'admin') {

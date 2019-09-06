@@ -1,0 +1,37 @@
+<div class='contactForm'>
+    <div class='title'>CONTACT US</div>
+    <form (ngSubmit)="onSubmit(); contactForm.reset();" #contactForm="ngForm">
+        
+        <div class='labelAndInput'>
+            <div class='errorAndLabel'>
+                <label for="email">EMAIL</label><br>
+                <div class='errorMSG' *ngIf="emailIn.invalid && emailIn.touched && emailIn.errors.required"> (required)</div>
+                <div class='errorMSG' *ngIf="emailIn.invalid && (emailIn.dirty || emailIn.touched) && !emailIn.errors?.required">Email is invalid
+                </div>
+            </div>
+            <input name='email' type='email' [(ngModel)]="email" required placeholder='example@example.com'
+                #emailIn='ngModel' email>
+        </div>
+
+        <div class='labelAndInput'>
+            <div class='errorAndLabel'>
+                <label for="subject">SUBJECT</label><br>
+                <div class='errorMSG' *ngIf="subjectM.invalid && subjectM.touched && subjectM.errors.required"> (required)</div>
+            </div>
+            <input type='text' name='subject' [(ngModel)]="subject" required #subjectM='ngModel'>
+        </div>
+
+        <div class='labelAndInput'>
+            <label for="message">MESSAGE</label><br>
+            <textarea rows="8" cols="50" name='message' [(ngModel)]="message"
+                placeholder='Enter description...'></textarea>
+        </div>
+
+        <div class='buttons'>
+            <input class='btn' type='button' value='BACK' (click)='back($event)'>
+            <input appConfirmation [disabled]='!contactForm.form.valid' class='btn' type='submit' value='SUBMIT'>
+        </div>
+
+    </form>
+
+</div>

@@ -1,0 +1,9 @@
+<div class='productsList'>
+    <ul class='productsList'>
+        <li class='productWrap' *ngFor='let product of products'>
+            <app-product (clickOnProductEvent)='productPressed($event)' [product]='product'
+                [showData]='showDetails'>
+            </app-product>
+        </li>
+    </ul>
+</div>

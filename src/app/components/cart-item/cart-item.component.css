@@ -1,0 +1,26 @@
+.productDetails {
+    display: flex;
+    flex-flow: column;
+    padding: 20px;
+    text-align: left;
+}
+
+.details {
+    display: flex;
+    flex-flow: row;
+}
+
+.productImage {
+    width: 250px;
+    height: 210px;
+}
+
+.quantity {
+    display: flex;
+    flex-flow: row;
+}
+
+p {
+    margin: 0px;
+    font-size: 18px;
+}

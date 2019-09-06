@@ -31,7 +31,7 @@ export class LocalizationService {
 
   /**get the link name by a given key*/
   getLinkNameByKey(key: string): string {
-    let value = this.links.find((element) => {
+    const value = this.links.find((element) => {
       return element.key === key;
     })
     return value.value;

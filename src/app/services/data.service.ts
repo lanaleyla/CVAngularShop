@@ -29,8 +29,15 @@ export class DataService {
   /**get product by Id */
   getProductById(id: number): number {
     return this.products.findIndex((element) => {
-      return element.productId === id; //change it to id
+      return element.productId === id; 
     });
+  }
+
+  getProduct(id:number):Product{
+    console.log(id);
+    console.log(this.getProductById(id));
+    console.log(this.products[this.getProductById(id)]);
+    return this.products[this.getProductById(id)];
   }
 
   /**get all products */
@@ -45,7 +52,7 @@ export class DataService {
 
   /**add product to product list */
   addEditProduct(product: Product): boolean {
-    let index = this.getProductById(product.productId); //search id product allready exists
+    const index = this.getProductById(product.productId); //search id product allready exists
     if (index >= 0) {
       this.products[index] = product;
       return true;
@@ -60,7 +67,7 @@ export class DataService {
 
   /**remove product from the list */
   removeProduct(product: Product): boolean {
-    let index = this.getProductById(product.productId); //search id product allready exists
+    const index = this.getProductById(product.productId); //search id product allready exists
     if (index >= 0) {
       this.products.splice(index, 1);
       return true;

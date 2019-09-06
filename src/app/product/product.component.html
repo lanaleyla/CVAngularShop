@@ -1,7 +1,0 @@
-<div class='product' *ngIf='showData'>
-    <img class='productImg' [src]='product.image' alt='product' (click)='showDetails()' />
-    {{ product.title }}
-    <button *ngIf='userStatus' class='btn' type='button' (click)='addToCart()'>ADD TO CART</button>
-    <button *ngIf='userStatus && permission' class='btn' type='button' (click)='editProduct()'>EDIT PRODUCT</button>
-</div>
-

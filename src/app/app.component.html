@@ -5,35 +5,10 @@
 
 <div [@open]='status'>
     <app-header (clickOnMenuEvent)=updateMenu($event)></app-header>
-
-
     <div class='view'>
-
-        <div class='textDesign'>
-            <app-login-form *ngIf="currentPage=='login'"></app-login-form>
+        <div [@routerTransition]='appOutlet.isActivated ? appOutlet.activatedRoute : null' class='textDesign'>
+            <router-outlet #appOutlet='outlet'></router-outlet>
         </div>
-
-        <div [@myState]='OptionStatus' class='textDesign' *ngIf="currentPage=='home'">
-            <app-home></app-home>
-        </div>
-
-        <div [@myState]='OptionStatus' class='textDesign' *ngIf="currentPage=='about'">
-            <app-about></app-about>
-        </div>
-
-        <div class='viewpProducts' [@myState]='OptionStatus' *ngIf="currentPage=='products'">
-            <app-categories-list></app-categories-list>
-        </div>
-
-        <div [@myState]='OptionStatus' class='textDesign' *ngIf="currentPage=='addProduct'">
-            <app-add-edit-product-form></app-add-edit-product-form>
-        </div>
-
-        <div [@myState]='OptionStatus' class='textDesign' *ngIf="currentPage=='contact'">
-            <app-contact></app-contact>
-        </div>
-
-        <app-cart *ngIf="currentPage=='cart'"></app-cart>
     </div>
 
 </div>

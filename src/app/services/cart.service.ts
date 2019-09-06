@@ -11,6 +11,7 @@ export class CartService {
   _showCartStatus: boolean;
   totalSum: number = 0;
   numberOfproductsInCart: number = 0;
+  _productIn: string='';
 
   constructor() {
   }
@@ -37,7 +38,7 @@ export class CartService {
 
   /**add product to cart, if same product was chosen more then once add it to duplicates array and update its count*/
   addProduct(product: Product) {
-    let index = this.checkDuplicates(product);
+    const index = this.checkDuplicates(product);
     if (index < 0) { //no duplicates
       this.productsInCart.push(product);
       this.duplicates.push(new DuplicatedProduct(product.title, 1));
@@ -51,10 +52,10 @@ export class CartService {
 
   /**delet product from cart, if there is more then one instance of the product update its count else delete */
   deleteProductFromCart(product: Product) {
-    let indexP = this.checkDuplicates(product);
+    const indexP = this.checkDuplicates(product);
     if (this.duplicates[indexP].count <= 1) //no duplicates
     {
-      let index = this.productsInCart.findIndex(function (element) {
+      const index = this.productsInCart.findIndex(function (element) {
         return element.title === product.title ? product : null;
       });
       this.productsInCart.splice(index, 1); //delete from the productList array
@@ -77,8 +78,8 @@ export class CartService {
 
   /**check if user added the same product more then one time */
   checkDuplicates(pr: Product): number {
-    let matchIndex = this.duplicates.findIndex((element) => {
-      return element.title === pr.title ? true : false;
+    const matchIndex = this.duplicates.findIndex((element) => {
+      return element.title === pr.title ? true : false; /*****************************fix this */
     });
     return matchIndex;
   }
@@ -99,8 +100,19 @@ export class CartService {
   calculateSum() {
     let sum = 0;
     for (let product of this.productsInCart) {
-      sum =sum +(this.getProductCount(product)*product.price);
+      sum = sum + (this.getProductCount(product) * product.price);
     }
-    this.totalSum=sum;
+    this.totalSum = sum;
   }
+
+  set productIn(productIsIn: string) {
+    console.log(productIsIn);
+    this._productIn = productIsIn;
+  }
+
+  get productIn(): string {
+    console.log(this._productIn);
+    return this._productIn;
+  }
+
 }
