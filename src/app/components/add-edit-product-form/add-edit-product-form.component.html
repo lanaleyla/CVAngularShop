@@ -50,8 +50,6 @@
 
         <div class='buttons'>
             <input class='btn' type='button' (click)='back()' value='BACK'>
-            <input class='btn' [disabled]='!productToEdit' type='button' (click)='removeProductFromList()'
-                value='REMOVE'>
             <input [disabled]='!contactForm.valid' class='btn' type='submit' (click)='addEditProduct()' value='SAVE'>
         </div>
 

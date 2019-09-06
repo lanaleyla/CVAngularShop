@@ -71,20 +71,6 @@ export class AddEditProductFormComponent implements OnInit {
     }
   }
 
-  /**remove product to edit from the products list */
-  removeProductFromList() {
-    if (this.productToEdit) {
-      if (this.dataService.removeProduct(this.productToEdit)) {
-        alert('product was removed');
-      }
-      else {
-        alert('product was not found');
-      }
-    }
-    this.contactForm.reset();
-    this.userService.product = null;
-  }
-
   /**back to previous page */
   back() {
     this.pageService.backToPrev();

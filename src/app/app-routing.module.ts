@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
   { path: 'addEditProduct', component: AddEditProductFormComponent, canDeactivate: [DirtyFormGuard] },
   {
-    path: 'cart', component: CartComponent, canActivate: [LogedInGuard], children: [{
+    path: 'cart', component: CartComponent,canActivate: [LogedInGuard], children: [{
       path: 'products/:id', component: ProductDetailsComponent
     }]
   },
@@ -28,7 +28,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
   exports: [RouterModule],
   providers: [
     DirtyFormGuard,
