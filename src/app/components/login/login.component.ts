@@ -24,10 +24,7 @@ export class LoginComponent implements OnInit {
   sightOut() {
     this.userService.userStatus = false;
     this.userService.user = null; //initalize the user on log out
-    if (this.pageService.currentPage === 'cart' || this.pageService.currentPage === 'addProduct') //redirect bac to main page(home)
-    {
-      this.pageService.currentPage = 'home';
-    }
+    this.pageService.currentPage = 'home';
     this.cartService.deleteAllProducts();
   }
 

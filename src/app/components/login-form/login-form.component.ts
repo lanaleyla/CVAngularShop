@@ -51,8 +51,4 @@ export class LoginFormComponent implements OnInit {
     return this.contactForm.get('passward');
   }
 
-  /**back to previus page */
-  // back() {
-  //   this.pageService.backToPrev();
-  // }
 }
