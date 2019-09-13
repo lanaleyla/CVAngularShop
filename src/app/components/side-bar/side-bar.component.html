@@ -2,12 +2,14 @@
     <div class='menuOptions'>
 
         <div class='chooseLanguages'>
-            <div *ngFor='let l of languages'>
-                <input class='languageBtn' type='button' name='ENG' (click)='changeLanguage($event)' [value]=l>
+            <div class='languages'>
+                <div *ngFor='let l of languages'>
+                    <input class='languageBtn' type='button' name='ENG' (click)='changeLanguage($event)' [value]=l>
+                </div>
             </div>
+            <input class='closeBtn' type='button' value='x' (click)='closeTopBar()' />
         </div>
 
-        <a class='closeBtn' (click)='closeTopBar()'>×</a>
         <button (click)='showMain()' class='sideBtn' type='button' routerLink='/home'
             routerLinkActive='active'>{{"Home" | language}}</button>
         <button (click)='showAbout()' class='sideBtn' type='button' routerLink='/about'

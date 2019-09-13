@@ -1,4 +1,4 @@
-import { Component, OnInit, } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Product } from 'src/model';
 import { CartService, PageService } from 'src/app/services';
 
@@ -7,13 +7,17 @@ import { CartService, PageService } from 'src/app/services';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css']
 })
-export class CartComponent implements OnInit {
+export class CartComponent implements OnInit, OnDestroy {
 
   cart = 'cart'; //used in the productDetails component(show remove button and quantity)
 
   constructor(private cartService: CartService, private pageService: PageService) { }
 
   ngOnInit() {
+  }
+
+  ngOnDestroy() {
+    this.cartService.productIn = '';
   }
 
   /**get the products list in the cart */
@@ -38,7 +42,6 @@ export class CartComponent implements OnInit {
 
   /**show product details */
   openDetails(id: string) {
-    this.cartService.productIn='cart';
     this.pageService.currentPage = `cart/products/${id}`;
   }
 
