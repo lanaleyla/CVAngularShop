@@ -1,0 +1,104 @@
+.btn {
+    margin: 10px 10px 10px 10px;
+    outline: none;
+    width: 100px;
+    height: 40px;
+    border: none;
+    font-size: 18px;
+    font-family: fantasy;
+    text-align: center;
+    background-color: #211d57;
+    color: #fff;
+}
+
+.btn:hover {
+    box-shadow: 0 12px 16px 0 #0000003d, 0 17px 50px 0 #00000030;
+}
+
+.deatails {
+    display: inline-flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #e7edee;
+}
+
+.productDetails {
+    padding: 10px;
+    text-align: left;
+}
+
+.productImage {
+    width: 250px;
+    height: 210px;
+    border-radius: 3px;
+}
+
+.productsList {
+    display: inline-flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    padding-left: 10px;
+    margin: 0px;
+}
+
+.productD {
+    padding: 10px;
+}
+
+.productWrap {
+    display: inline-flex;
+    font-size: 18px;
+    text-align: center;
+    flex-flow: column;
+    border: 1 solid;
+    margin: 10px;
+}
+
+.title {
+    font-size: 30px;
+    padding: 10px;
+    color: #211d57;
+    padding: 10px;
+    border-bottom: 1px solid #b4cce2;
+}
+
+.cart {
+    display: flex;
+    flex-flow: column;
+    text-align: left;
+    justify-content: space-between;
+}
+
+.productsView {
+    display: flex;
+    flex-flow: row;
+    text-align: left;
+    justify-content: space-between;
+}
+
+.totalSum {
+    text-align: left;
+    font-size: 25px;
+    display: flex;
+    flex-flow: column;
+    height: 150px;
+    width: 300px;
+    background-color: #e7edee;
+    margin: 10px;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.titleInTotal {
+    color: #f07753;
+    border-bottom: 2px solid #f07753;
+}
+
+.productDesign {
+    display: flex;
+    flex-flow: row;
+    padding: 15px;
+    border-bottom: 1px solid #f07753;
+}

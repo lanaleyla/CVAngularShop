@@ -1,0 +1,19 @@
+<div class='deatails' *ngIf='product'>
+    <img class='productImage' src='{{product.image}}' alt='{{product.title}}'>
+    <div class='productDetails'>
+        <div class='exitAndDetails'>
+            <div>
+                <p>'{{product.title}}'</p>
+                <p>{{product.description}}</p>
+                <p>{{product.price}} ILS</p>
+            </div>
+            <input class='closeBtn' type='button' value='x' (click)='backToProductView()' />
+        </div>
+        <div class='buttons' *ngIf="(productIsIn|async)!=='cart'">
+            <button *ngIf="userStatus" type='button' class='btn' (click)='addProductToCart(product)'>ADD TO
+                CART</button>
+            <button *ngIf="userStatus && permission" type='button' class='btn' (click)='editProduct()'>EDIT
+                PRODUCT</button>
+        </div>
+    </div>
+</div>

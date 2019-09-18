@@ -1,0 +1,14 @@
+<div class='details'>
+
+    <img class='productImage' src='{{product.image}}' alt='{{product.title}}' (click)='openDetails(product.productId)'>
+    <div class='productDetails'>
+        <p>'{{product.title}}'</p>
+        <p>{{product.price}} ILS</p>
+        <div class='quantity'>
+            <p>Qty: {{productCount}}</p>
+            <button type='button' class='btn' (click)='addProductToCart(product)'>+</button>
+            <button type='button' class='btn' (click)='deleteProductFromCart(product)'>-</button>
+        </div>
+    </div>
+    
+</div>

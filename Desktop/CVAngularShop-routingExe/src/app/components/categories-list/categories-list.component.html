@@ -1,0 +1,11 @@
+<div class="categoriesAndProducts">
+  <div class='categories'>
+    <ul class='categoriesList'>
+      <li class='category' *ngFor='let category of (categoriesArray| async)'>
+        <input [name]='category.id' [value]='category.title' type='button' class='categoryBtn'
+          (click)='showProducts($event.target)'>
+      </li>
+    </ul>
+  </div>
+  <app-product-list [products]='(productsArray| async)'></app-product-list>
+</div>

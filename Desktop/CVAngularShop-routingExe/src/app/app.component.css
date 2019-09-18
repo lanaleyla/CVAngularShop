@@ -1,0 +1,14 @@
+.textDesign {
+    font-size: 30px;
+    text-align: left;
+    padding-top: 10px;
+    color: #211d57;
+}
+
+.view {
+    /* margin: 20px; */
+    padding: 10px; 
+}
+.viewpProducts {
+    margin: 0px;
+}

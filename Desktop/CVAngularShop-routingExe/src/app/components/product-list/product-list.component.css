@@ -1,0 +1,22 @@
+.productsList {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    list-style: none;
+    font-family: fantasy;
+}
+
+.productWrap {
+    display: flex;
+    font-size: 18px;
+    text-align: center;
+    flex-flow: column;
+    border: 1 solid;
+    box-shadow: 0 12px 16px 0 #0000003d, 0 17px 50px 0 #00000030;
+    margin: 30px;
+}
+
+.productImg {
+    width: 250px;
+    height: 210px;
+}

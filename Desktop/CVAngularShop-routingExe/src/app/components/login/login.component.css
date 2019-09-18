@@ -1,0 +1,37 @@
+.login {
+  margin: 10px;
+  outline: none;
+  width: auto;
+  height: auto;
+  border: none;
+  font-size: 18px;
+  font-family: fantasy;
+  background-color: #211d57;
+  color: #fff;
+}
+
+.login:hover {
+  box-shadow: 0 12px 16px 0 #0000003d, 0 17px 50px 0 #00000030;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 150px;
+  font-size: 18px;
+  box-shadow: 0 12px 16px 0 #0000003d, 0 17px 50px 0 #00000030;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #211d57;
+  font-family: fantasy;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.loginMenu:hover .dropdown-content {
+  display: block;
+}
