@@ -1,0 +1,44 @@
+{
+    "products": [
+        {
+            "productId":1,
+            "categoryId": "B",
+            "image": "https://zernograd.com/wp-content/uploads/2017/06/achma-georgian-cheese-puff-pie.jpg",
+            "title": "Achma",
+            "price": 45,
+            "description": "Layers and cheese, my moms favorite"
+        },
+        {
+            "productId":2,
+            "categoryId": "C",
+            "image": "https://media-cdn.tripadvisor.com/media/photo-s/0e/10/d9/c3/hinkali.jpg",
+            "title": "Hinkali",
+            "price": 60,
+            "description": "10 pieces of hinkali filled with mixed beef meet"
+        },
+        {
+            "productId":3,
+            "categoryId": "B",
+            "image": "https://cdn.1tv.ge/app/uploads/2018/06/Piki-Kalakshi-1528444801.jpg",
+            "title": "Hachapuri Megruli",
+            "price": 50,
+            "description": "Filled with cheese on the inside and the outside"
+        },
+        {
+            "productId":4,
+            "categoryId": "C",
+            "image": "https://media-cdn.tripadvisor.com/media/photo-s/0e/52/ff/3c/mzvadi.jpg",
+            "title": "Grilled meet, shahliki",
+            "price": 80,
+            "description": "Grilled meet with 2 kindes of sauces, red and green themali"
+        },
+        {
+            "productId":5,
+            "categoryId": "D",
+            "image": "https://i.pinimg.com/originals/2c/d7/7d/2cd77d6053d4395e42050f6fedbd2c47.jpg",
+            "title": "Eggplant with ground nuts",
+            "price": 45,
+            "description": "10 Grilled eggplants with ground nuts and grenades"
+        }
+    ]
+}

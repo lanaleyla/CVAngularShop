@@ -1,0 +1,22 @@
+{
+    "users": [
+        {
+            "name": "lana",
+            "passward": "lana",
+            "permission":"admin",
+            "status":false
+        },
+        {
+            "name": "niki",
+            "passward": "niki",
+            "permission":"user",
+            "status":false
+        },
+        {
+            "name": "anastasia",
+            "passward": "anastasia",
+            "permission":"admin",
+            "status":false
+        }
+    ]
+}

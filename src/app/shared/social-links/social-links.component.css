@@ -1,0 +1,14 @@
+.menuIcon {
+    height: 50px;
+    width: 50px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.icons {
+    right: 0px;
+    justify-content: center;
+    display: flex;
+    flex-flow: row-reverse;
+    flex-wrap: wrap;
+}

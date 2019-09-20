@@ -1,0 +1,68 @@
+{
+    "ENG": [
+        {
+            "key": "Home",
+            "value": "Home"
+        },
+        {
+            "key": "About",
+            "value": "About"
+        },
+        {
+            "key": "Products",
+            "value": "Products"
+        },
+        {
+            "key": "Add Product",
+            "value": "Add Product"
+        },
+        {
+            "key":"Contact",
+            "value": "Contact"
+        }
+    ],
+    "RUS": [
+        {
+            "key":"Home",
+            "value": "Главная"
+        },
+        {
+            "key":"About",
+            "value": "насчет нас"
+        },
+        {
+            "key":"Products",
+            "value": "продукты"
+        },
+        {
+            "key":"Add Product",
+            "value": "добавить продукты"
+        },
+        {
+            "key":"Contact",
+            "value": "контакт"
+        }
+    ],
+    "HEW": [
+        {
+            "key":"Home",
+            "value": "בית"
+        },
+        {
+            "key":"About",
+            "value": "על החברה"
+        },
+        {
+            "key":"Products",
+            "value": "מוצרים"
+        },
+        {
+            "key":"Add Product",
+            "value": "הוספת מוצר"
+        },
+        {
+            "key":"Contact",
+            "value": "צור קשר"
+        }
+    ]
+}

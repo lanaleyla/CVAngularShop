@@ -1,0 +1,13 @@
+<div *ngIf='menuClicked'>
+    <app-side-bar (clickHideOnEvent)='updateMenu($event)' (clickCloseMenuEvent)='updateMenu($event)'></app-side-bar>
+</div>
+
+<div [@open]='status'>
+    <app-header (clickOnMenuEvent)=updateMenu($event)></app-header>
+    <div class='view'>
+        <div [@routeAnimations]='appOutlet.isActivated ? appOutlet.activatedRoute : null' class='textDesign'>
+            <router-outlet #appOutlet='outlet'></router-outlet>
+        </div>
+    </div>
+
+</div>
